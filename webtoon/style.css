@@ -79,6 +79,10 @@ p.next-btn.next{
     line-height: 20px;
 }
 
+div#wrap.header_bdr div#header{
+    border: none;
+}
+
 body.no-btn .right_area .spi_area{
     display: none;
 }
@@ -114,4 +118,149 @@ body.cleaner ul.card_lst{
 
 body.cleaner div.card_wrap{
     width: 1350px;
+}
+
+@media (prefers-color-scheme: dark) {
+
+body.dark-mode{
+    background-color: black;
+}
+
+body.dark-mode p{
+    color: white;
+}
+
+body.dark-mode h2{
+    color: white;
+}
+
+body.dark-mode h3{
+    color: white;
+}
+
+body.dark-mode h5{
+    color: white;
+}
+
+body.dark-mode #container.bg{
+    background: #313338;
+}
+
+body.dark-mode .snb_wrap{
+    background: #2b2d31;
+    border-top: 1px solid #1a1b1e;
+    border-bottom: 1px solid #1a1b1e;
+}
+
+body.dark-mode #header{
+    background: #2b2d31;
+}
+
+body.dark-mode .header_bdr #footer{
+    border-top: 1px solid #666;
+    background: #2b2d31;
+}
+
+body.dark-mode #footer{
+    border-top: 1px solid black;
+    background: black;
+}
+
+body.dark-mode #footer a{
+    color: white;
+}
+
+body.dark-mode .info p{
+    color: black;
+}
+
+body.dark-mode #footer .language .lk_lang{
+    color: black;
+}
+
+body.dark-mode .like_lst .lst_type1 li{
+    border-bottom: 1px solid #666;
+}
+
+body.dark-mode .lst_type1 li{
+    border-top: 1px solid #666;
+}
+
+body.dark-mode .header_inner a{
+    color: white;
+}
+
+body.dark-mode .sta span.login{
+    background: #bbb;
+    color: black;
+}
+
+body.dark-mode .tit{
+    color: white;
+}
+
+body.dark-mode .info_area p{
+    color: white;
+}
+
+body.dark-mode .snb li.on a{
+    color: white;
+}
+
+body.dark-mode .snb li.on a::before{
+    background-color: #f5f5f5;
+}
+
+body.dark-mode .episode_area{
+    background-color: #2b2d31;
+}
+
+body.dark-mode p._readComplete{
+    color: white;
+}
+
+body.dark-mode #cbox_module{
+    background-color: black;
+}
+
+body.dark-mode .u_cbox .u_cbox_recomm_set .u_cbox_btn_recomm, .u_cbox .u_cbox_recomm_set a.u_cbox_btn_unrecomm{
+    background-color: transparent;
+}
+
+body.dark-mode .u_cbox .u_cbox_write .u_cbox_inbox .u_cbox_text{
+    background-color: #313338;
+}
+
+body.dark-mode .u_cbox .u_cbox_write .u_cbox_inbox{
+    background-color: #313338;
+}
+
+body.dark-mode .u_cbox .u_cbox_btn_upload{
+    background-color: #B5BAC1;
+}
+
+body.dark-mode .u_cbox_nick{
+    color: white;
+}
+
+body.dark-mode .u_cbox_num_page{
+    color: white;
+}
+
+body.dark-mode .author_name{
+    color: white;
+}
+
+/*body.dark-mode .detail_body.banner .detail_lst{
+    background-color: #313338;
+}
+
+body.dark-mode .detail_body .detail_lst li a:visited .date, .detail_body .detail_lst li a:visited .like_area, .detail_body .detail_lst li a:visited .subj span, .detail_body .detail_lst li a:visited .tx{
+    color: white;
+}
+
+body.dark-mode div.detail_body.banner{
+    background-color: #eeeeee;
+}*/
+
 }

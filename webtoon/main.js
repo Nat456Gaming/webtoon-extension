@@ -1,11 +1,13 @@
 const lang = window.location.href.split("/")[3];
 
-chrome.storage.sync.get({ first: false, second: false, third: false, fourth: false },(settings) => {
+chrome.storage.sync.get({ first: false, second: false, third: false, fourth: false, fifth: false},(settings) => {
     if (settings.first){
         document.getElementById("noticeArea").remove();
         document.getElementsByTagName("body")[0].classList.add("cleaner");
     }if (settings.second){
         document.getElementsByTagName("body")[0].classList.add("no-btn");
+    }if (settings.fifth){
+        document.getElementsByTagName("body")[0].classList.add("dark-mode");
     }
     const header_read = document.getElementById("_toolBarRightArea");
     if (header_read){
