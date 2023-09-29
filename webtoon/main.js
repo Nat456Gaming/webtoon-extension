@@ -40,4 +40,13 @@ chrome.storage.sync.get({ first: false, second: false, third: false, fourth: fal
             if (event.key === "n") window.location.href = next_url ? next_url : `/${lang}/favorite`;
         })
     }
+    if(false){
+        const http = new XMLHttpRequest();
+        var url = "https://www.webtoons.com/en/romance/reveal-out/list?title_no=4090";
+        http.open("GET", url);
+        http.send();
+        let out = http.responseText;
+        const parser = new DOMParser();
+        const html = parser.parseFromString(out, "text/html");
+    }
 });
