@@ -255,6 +255,10 @@ body.dark-mode .author_name{
     color: white;
 }
 
+body.dark-mode em.ico_money, body.dark-mode em.ico_hand, body.dark-mode a.btn_top{
+    filter: invert(1);
+}
+
 /*body.dark-mode .detail_body.banner .detail_lst{
     background-color: #313338;
 }
