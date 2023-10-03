@@ -45,8 +45,34 @@ chrome.storage.sync.get({ first: false, second: false, third: false, fourth: fal
         var url = "https://www.webtoons.com/en/romance/reveal-out/list?title_no=4090";
         http.open("GET", url);
         http.send();
+        while (http.responseText == ""){
+            console.log("a");
+        }
         let out = http.responseText;
         const parser = new DOMParser();
         const html = parser.parseFromString(out, "text/html");
     }
 });
+
+/*
+const waitUntil = (condition, checkInterval=100) => {
+    return new Promise(resolve => {
+        let interval = setInterval(() => {
+            if (!condition()) return;
+            clearInterval(interval);
+            resolve();
+        }, checkInterval)
+    })
+}
+
+async function test(){
+    const http = new XMLHttpRequest();
+    var url = "https://www.google.com";
+    http.open("GET", url);
+    http.send();
+    await waitUntil(() => (http.responseText =! ""));
+    let out = http.responseText;
+    const parser = new DOMParser();
+    return parser.parseFromString(out, "text/html");
+}
+*/
