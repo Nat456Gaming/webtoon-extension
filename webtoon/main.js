@@ -40,39 +40,29 @@ chrome.storage.sync.get({ first: false, second: false, third: false, fourth: fal
             if (event.key === "n") window.location.href = next_url ? next_url : `/${lang}/favorite`;
         })
     }
-    if(false){
-        const http = new XMLHttpRequest();
-        var url = "https://www.webtoons.com/en/romance/reveal-out/list?title_no=4090";
-        http.open("GET", url);
-        http.send();
-        while (http.responseText == ""){
-            console.log("a");
-        }
-        let out = http.responseText;
-        const parser = new DOMParser();
-        const html = parser.parseFromString(out, "text/html");
-    }
 });
 
-/*
-const waitUntil = (condition, checkInterval=100) => {
-    return new Promise(resolve => {
-        let interval = setInterval(() => {
-            if (!condition()) return;
-            clearInterval(interval);
-            resolve();
-        }, checkInterval)
-    })
+function test(){
+    let length = document.getElementsByClassName("card_item").length
+    for (let i = 0; i< length; i++){
+        let lastEp = getLastEp(document.getElementsByClassName("card_item")[i].href);
+        let text = document.getElementsByClassName("update")[i].innerHTML
+        document.getElementsByClassName("update")[i].innerHTML = lastEp + text.slice(text.search("<br>"));
+    }
 }
 
-async function test(){
-    const http = new XMLHttpRequest();
-    var url = "https://www.google.com";
-    http.open("GET", url);
-    http.send();
-    await waitUntil(() => (http.responseText =! ""));
-    let out = http.responseText;
-    const parser = new DOMParser();
-    return parser.parseFromString(out, "text/html");
+function getLastEp(url){
+    return request(url).getElementsByClassName("_episodeItem")[0].getElementsByClassName("tx")[0].innerText
 }
-*/
+
+function request(url){
+    const http = new XMLHttpRequest();
+    const parser = new DOMParser();
+    http.open("GET", url, false);
+    http.send();
+    return parser.parseFromString(http.responseText, "text/html");
+}
+
+/*window.onload = function() {
+    test();
+};*/
