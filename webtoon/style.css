@@ -83,8 +83,13 @@ div#wrap.header_bdr div#header{
     border: none;
 }
 
-.info p{
+.card_item .info p{
     text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+.card_item span.update{
+    color: #ffffff;
+    text-shadow: 1px 0 #000000, -1px 0 #000000, 0 1px #000000, 0 -1px #000000, 1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;
 }
 
 body.no-btn .right_area .spi_area{
