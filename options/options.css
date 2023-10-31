@@ -4,6 +4,8 @@ body {
     background-color: #eeeeee;
     margin: 8px 8px 8px 8px;
     padding-bottom: 5px;
+    -webkit-transition: .4s;
+    transition: .4s;
 }
 
 h1, h2 {
@@ -95,4 +97,19 @@ label.switch input:checked + span.slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
+}
+
+@media (prefers-color-scheme: dark) {
+    body.dark-mode {
+        background-color: #1e1f22;
+    }
+    body.dark-mode table.settings-container {
+        background-color: #2b2d31;
+    }
+    body.dark-mode h1, body.dark-mode h2 {
+        color: white;
+    }
+    body.dark-mode label.switch span.slider:before {
+        background-color: #313338;
+    }
 }
