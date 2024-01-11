@@ -1,5 +1,12 @@
 const lang = window.location.href.split("/")[3];
 
+/*window.onload = function() {
+    let googlefont = document.createElement("link");
+    googlefont.rel = "stylesheet";
+    googlefont.href = "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200";
+    document.head.appendChild(googlefont);
+};*/
+
 chrome.storage.sync.get({ first: false, second: false, third: false, fourth: false, fifth: false},(settings) => {
     if (settings.first){
         document.getElementById("noticeArea").remove();
@@ -15,7 +22,7 @@ chrome.storage.sync.get({ first: false, second: false, third: false, fourth: fal
         link.setAttribute('href', `/${lang}/favorite`)
         link.setAttribute('title', 'Subscribed')
         link.className = "favorite-link-read"
-        link.innerHTML = "♥";
+        link.innerHTML = '<span class="material-symbols-rounded">favorite</span>';
         header_read.insertBefore(link, document.getElementsByClassName("spi_area")[0]);
 
         const next_url = document.getElementsByClassName("pg_next")[0].href;
@@ -25,14 +32,14 @@ chrome.storage.sync.get({ first: false, second: false, third: false, fourth: fal
                 next_link.setAttribute('href', next_url);
                 next_link.setAttribute('title', 'Next Episode');
                 next_link.className = "next-ep-read";
-                next_link.innerHTML = '<p class="next-btn arrow">→</p> <p class="next-btn next">NEXT</p>';
+                next_link.innerHTML = '<p class="next-btn arrow"><span class="material-symbols-rounded">arrow_forward</span></p><p class="next-btn next">NEXT</p>';
                 document.getElementById("container").appendChild(next_link);
             }
         }else if (settings.fourth){
             let link2 = document.createElement('a');
             link2.setAttribute('href', '/'+lang+'/favorite');
             link2.setAttribute('title', 'Subscribed');
-            link2.innerHTML = '<p style="line-height: 53px;">♥</p>';
+            link2.innerHTML = '<p style="line-height: 53px;"><span class="material-symbols-rounded">favorite</span></p>';
             link2.className = "next-ep-favorite-read";
             document.getElementById("container").appendChild(link2);
         }
