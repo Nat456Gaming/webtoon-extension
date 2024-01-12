@@ -1,12 +1,5 @@
 const lang = window.location.href.split("/")[3];
 
-/*window.onload = function() {
-    let googlefont = document.createElement("link");
-    googlefont.rel = "stylesheet";
-    googlefont.href = "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200";
-    document.head.appendChild(googlefont);
-};*/
-
 chrome.storage.sync.get({ first: false, second: false, third: false, fourth: false, fifth: false},(settings) => {
     if (settings.first){
         document.getElementById("noticeArea").remove();
@@ -49,6 +42,24 @@ chrome.storage.sync.get({ first: false, second: false, third: false, fourth: fal
     }
 });
 
+var Process = function(start) {
+    this.start = start;
+}
+
+Process.prototype.run = function() {
+    // Long-running loop
+    let length = document.getElementsByClassName("card_item").length
+    for (let i = 0; i< length; i++){
+        let lastEp = getLastEp(document.getElementsByClassName("card_item")[i].href);
+        let text = document.getElementsByClassName("update")[i].innerHTML
+        document.getElementsByClassName("update")[i].innerHTML = lastEp + text.slice(text.search("<br>"));
+    }
+}
+
+var p = new Process(1);
+
+
+
 function test(){
     let length = document.getElementsByClassName("card_item").length
     for (let i = 0; i< length; i++){
@@ -70,6 +81,8 @@ function request(url){
     return parser.parseFromString(http.responseText, "text/html");
 }
 
-/*window.onload = function() {
-    test();
-};*/
+window.onload = function() {
+    //setTimeout(test(), 100);
+    //test();
+    //p.run();
+};
