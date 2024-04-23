@@ -28,6 +28,14 @@ chrome.storage.sync.get({ first: false, second: false, third: false, fourth: fal
                 next_link.innerHTML = '<p class="next-btn arrow"><span class="material-symbols-rounded">arrow_forward</span></p><p class="next-btn next">NEXT</p>';
                 document.getElementById("container").appendChild(next_link);
             }
+            if(settings.second){
+                let next_link2 = document.createElement('a');
+                next_link2.setAttribute('href', next_url);
+                next_link2.setAttribute('title', 'Next Episode');
+                next_link2.className = "favorite-link-read";
+                next_link2.innerHTML = '<span class="material-symbols-rounded">arrow_forward</span>';
+                header_read.insertBefore(next_link2, document.getElementsByClassName("spi_area")[0]);
+            }
         }else if (settings.fourth){
             let link2 = document.createElement('a');
             link2.setAttribute('href', '/'+lang+'/favorite');
@@ -42,6 +50,7 @@ chrome.storage.sync.get({ first: false, second: false, third: false, fourth: fal
     }
 });
 
+/*
 var Process = function(start) {
     this.start = start;
 }
@@ -85,4 +94,4 @@ window.onload = function() {
     //setTimeout(test(), 100);
     //test();
     //p.run();
-};
+};*/
